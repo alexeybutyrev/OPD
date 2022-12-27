@@ -4,10 +4,10 @@ from collections import defaultdict
 from itertools import combinations
 
 # from detection import Detection
-from . import Detection
+from opd.detection import Detection
 from itertools import product
 from math import inf, sqrt
-from typing import Optional, Tuple
+from typing import Optional, Tuple, Set
 
 import pandas as pd
 import numpy as np
@@ -138,7 +138,7 @@ class Session:
 
     def detect_forklifts_and_people(
         self, frame_id: Optional[FrameID] = None
-    ) -> Tuple[set[DetectionID], set[DetectionID]]:
+    ) -> Tuple[Set[DetectionID], Set[DetectionID]]:
         """Return two sets of forlifts IDs and people IDs
 
         Args:
